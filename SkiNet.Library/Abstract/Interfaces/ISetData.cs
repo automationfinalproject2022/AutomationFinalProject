@@ -8,6 +8,6 @@ namespace SkiNet.Library.Abstract.Interfaces
 {
     public interface ISetData
     {
-        void SetData(dynamic data);
+        public void SetData(dynamic data);
     }
 }

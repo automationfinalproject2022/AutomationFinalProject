@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SkiNet.Library.Abstract.Interfaces
 {
-    internal interface IGetData
+    public interface IGetData
     {
-        dynamic ActualData { get; }
+        public dynamic ActualData { get; }
     }
 }

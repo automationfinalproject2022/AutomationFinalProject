@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="PageComponents\Controls\" />
-    <Folder Include="PageComponents\PageObjects\" />
     <Folder Include="Pages\" />
   </ItemGroup>
 

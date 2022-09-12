@@ -27,7 +27,7 @@ namespace SkiNet.Library
         {
             if (url == null)
             {
-                url = Config.Configuration.Url;
+                url = Configuration.Url;
             }
 
             Driver.Url = url;

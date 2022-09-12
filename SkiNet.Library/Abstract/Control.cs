@@ -10,8 +10,6 @@ namespace SkiNet.Library.Abstract
 {
     public abstract class Control : PageObject, ISetData, IGetData
     {
-        protected IWebElement Input => SearchContext.FindElement(By.TagName("app-text-input"));
-
         protected Control(IWebElement webElement) : base(webElement)
         {
         }

@@ -155,14 +155,15 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate correct page is opened")]
-        [NUnit.Framework.TestCaseAttribute("Login", null)]
-        [NUnit.Framework.TestCaseAttribute("Shop", null)]
-        [NUnit.Framework.TestCaseAttribute("Errors", null)]
-        public virtual void ValidateCorrectPageIsOpened(string pageName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Login", "Login", null)]
+        [NUnit.Framework.TestCaseAttribute("Shop", "Shop", null)]
+        [NUnit.Framework.TestCaseAttribute("Errors", "Test Errors", null)]
+        public virtual void ValidateCorrectPageIsOpened(string pageName, string pageTitle, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("pageName", pageName);
+            argumentsOfScenario.Add("pageTitle", pageTitle);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate correct page is opened", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
@@ -191,7 +192,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When(string.Format("The {0} page is opened", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
- testRunner.Then(string.Format("The page title should be {0}", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The page title should be {0}", pageTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -16,10 +16,10 @@ Scenario: Validate Login page is opened (parametrized)
 Scenario Outline: Validate correct page is opened
 	Given Home page is displayed
 	When The <pageName> page is opened
-	Then The page title should be <pageName>
+	Then The page title should be <pageTitle>
 
 Examples:
-	| pageName |
-	| Login    |
-	| Shop     |
-	| Errors   |
+	| pageName | pageTitle   |
+	| Login    | Login       |
+	| Shop     | Shop        |
+	| Errors   | Test Errors |

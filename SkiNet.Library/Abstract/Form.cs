@@ -12,11 +12,9 @@ namespace SkiNet.Library.Abstract
     public abstract class Form : PageObject
     {
         private IWebElement _titleElement => SearchContext.FindElement(By.CssSelector("[class*='h3']"));
-        //private IWebElement _emailElement => SearchContext.FindElement(By.Id("Email Address"));
-        //private IWebElement _emailElement => SearchContext.FindElement(By.ClassName("form-control"));        
-
-        private IWebElement _emailElement => SearchContext.FindElement(By.CssSelector("input[placeholder = 'Email Address']"));
-        private IWebElement _passwordElement => SearchContext.FindElement(By.Id("Password"));
+        private IWebElement _inputControlContainer => SearchContext.FindElement(By.TagName("app-text-input"));
+        private IWebElement EmailElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='email']"));
+        private IWebElement PasswordElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='password']"));
 
 
         protected Form(IWebElement webElement) : base(webElement)
@@ -25,8 +23,8 @@ namespace SkiNet.Library.Abstract
         }
 
         public string Title => _titleElement.Text;
-        public TextInputControl EmailAddress => new TextInputControl(_emailElement);
-        public TextInputControl Password => new TextInputControl(_passwordElement);
+        public TextInputControl EmailAddress => new TextInputControl(EmailElement);
+        public TextInputControl Password => new TextInputControl(PasswordElement);
 
         protected abstract IWebElement ActionElement { get; }
 

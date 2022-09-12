@@ -102,5 +102,20 @@ namespace SeleniumTests
             Thread.Sleep(5000);
             */
         }
-    }
+
+
+        [Test]
+        public void Login2()
+        {
+            App app = new App(Driver);
+
+            app.Navigation.OpenLoginPage();
+
+            app.LoginPage.LoginForm.EmailAddress.SetData("a@a.com");
+            app.LoginPage.LoginForm.Password.SetData("!Q2w3e4r");
+
+            app.LoginPage.LoginForm.SignIn();
+        }
+
+        }
 }

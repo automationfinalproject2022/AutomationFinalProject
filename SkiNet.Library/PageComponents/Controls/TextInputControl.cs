@@ -10,8 +10,7 @@ namespace SkiNet.Library.PageComponents.Controls
 {
     public class TextInputControl : Control
     {
-        //private IWebElement Input => SearchContext.FindElement(By.ClassName("form-label-group"));
-        //protected IWebElement Input => SearchContext.FindElement(By.ClassName("form-control"));
+        private IWebElement Input => SearchContext.FindElement(By.TagName("input"));
 
         public string Placeholder => Input.GetAttribute("placeholder");
 

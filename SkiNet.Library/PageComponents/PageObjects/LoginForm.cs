@@ -11,8 +11,10 @@ namespace SkiNet.Library.PageComponents.PageObjects
 {
     public class LoginForm : Form
     {             
-        private IWebElement _forgotPasswordLink => SearchContext.FindElement(By.LinkText("Forgot password ?"));        
+        private IWebElement _forgotPasswordLink => SearchContext.FindElement(By.LinkText("Forgot password ?")); 
+        
         protected override IWebElement ActionElement => SearchContext.FindElement(By.CssSelector("button[type='submit']")); //TODO: Rework
+
 
         public LoginForm(IWebElement webElement) : base(webElement)
         {

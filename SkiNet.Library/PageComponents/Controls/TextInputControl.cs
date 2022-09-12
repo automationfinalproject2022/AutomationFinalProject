@@ -10,18 +10,21 @@ namespace SkiNet.Library.PageComponents.Controls
 {
     public class TextInputControl : Control
     {
-        private IWebElement Input => SearchContext.FindElement(By.ClassName("form-label-group"));
+        //private IWebElement Input => SearchContext.FindElement(By.ClassName("form-label-group"));
+        //protected IWebElement Input => SearchContext.FindElement(By.ClassName("form-control"));
+
+        public string Placeholder => Input.GetAttribute("placeholder");
 
         public TextInputControl(IWebElement webElement) : base(webElement)
         {
         }
-        
+
         public override dynamic ActualData => Input.GetAttribute("value").ToString();
 
         public override void SetData(dynamic data)
         {
             Input.Clear();
-            Input.SendKeys(data.ToString());
+            Input.SendKeys(data);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SkiNet.Library.Abstract;
+using SkiNet.Library.PageComponents.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,27 +11,21 @@ namespace SkiNet.Library.PageComponents.PageObjects
 {
     public class LoginForm : Form
     {             
-        private IWebElement _forgotPasswordLink => SearchContext.FindElement(By.LinkText("Forgot password ?"));
+        private IWebElement _forgotPasswordLink => SearchContext.FindElement(By.LinkText("Forgot password ?"));        
+        protected override IWebElement ActionElement => SearchContext.FindElement(By.CssSelector("button[type='submit']")); //TODO: Rework
 
         public LoginForm(IWebElement webElement) : base(webElement)
         {
         }
 
-        protected override void Action(IWebElement webElement)
-        {
-            webElement.Click();
-        }
-
         public void SignIn()
         {
-            Action(ActionButton);
+            ActionElement.Click();
         }
-
-        public void ForgotPassword()
+        
+        public void ClickForgotPassword()
         {
-            throw new NotImplementedException();
-        }
-
-         
+            _forgotPasswordLink.Click();
+        }         
     }
 }

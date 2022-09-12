@@ -27,7 +27,8 @@ namespace SkiNet.Library
         {
             if (url == null)
             {
-                url = Config.Configuration.Url;
+                //url = Config.Configuration.Url;
+                url = "https://skinet.herokuapp.com/";
             }
 
             Driver.Url = url;

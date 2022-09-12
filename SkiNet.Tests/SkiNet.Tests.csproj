@@ -21,4 +21,8 @@
     <Folder Include="Support\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SkiNet.Library\SkiNet.Library.csproj" />
+  </ItemGroup>
+
 </Project>

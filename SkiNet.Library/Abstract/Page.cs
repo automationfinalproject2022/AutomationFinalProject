@@ -11,7 +11,7 @@ namespace SkiNet.Library.Abstract
 {
     public abstract class Page
     {
-        private IWebElement _pageTitle => Body.FindElement(By.CssSelector("div[class='col-9']"));
+        private IWebElement PageTitle => Body.FindElement(By.CssSelector("div[class='col-9']"));
 
         protected IWebDriver WrappedDriver { get; private set; }
         protected IWebElement Body => WrappedDriver.FindElement(By.TagName("body"));
@@ -30,6 +30,6 @@ namespace SkiNet.Library.Abstract
             Wait(10).Until(ExpectedConditions.UrlToBe(newUrl));
         }
 
-        public string Title => _pageTitle.Text;
+        public string Title => PageTitle.Text;
     }
 }

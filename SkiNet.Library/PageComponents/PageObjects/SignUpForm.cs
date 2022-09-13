@@ -14,6 +14,6 @@ namespace SkiNet.Library.PageComponents.PageObjects
         {
         }
 
-        protected override IWebElement ActionElement => throw new NotImplementedException();
+        protected IWebElement ActionElement => throw new NotImplementedException();
     }
 }

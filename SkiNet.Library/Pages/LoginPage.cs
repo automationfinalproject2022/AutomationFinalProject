@@ -12,12 +12,12 @@ namespace SkiNet.Library.Pages
 {
     public class LoginPage : Page
     {
-         private IWebElement _loginForm => Body.FindElement(By.CssSelector("form[class*='valid']"));
+         private IWebElement LoginFormElement => Body.FindElement(By.CssSelector("form[class*='valid']"));
 
         public LoginPage(IWebDriver webDriver) : base(webDriver)
         {
         }
 
-        public LoginForm LoginForm => new LoginForm(_loginForm);         
+        public LoginForm LoginForm => new LoginForm(LoginFormElement);         
     }
 }

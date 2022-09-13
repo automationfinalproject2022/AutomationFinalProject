@@ -15,7 +15,8 @@ namespace SkiNet.Library.Abstract
         private IWebElement InputControlContainer => SearchContext.FindElement(By.TagName("app-text-input"));
         private IWebElement EmailElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='email']"));
         private IWebElement PasswordElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='password']"));
-
+        
+        protected IWebElement ButtonElement => SearchContext.FindElement(By.CssSelector("button[type='submit']")); 
 
         protected Form(IWebElement webElement) : base(webElement)
         {
@@ -24,17 +25,6 @@ namespace SkiNet.Library.Abstract
 
         public string Title => TitleElement.Text;
         public TextInputControl EmailAddress => new TextInputControl(EmailElement);
-        public TextInputControl Password => new TextInputControl(PasswordElement);
-
-        protected abstract IWebElement ActionElement { get; }
-
-        public void Action()
-        {
-            ActionElement.Click();
-        }
-
-        
-
-        
+        public TextInputControl Password => new TextInputControl(PasswordElement);        
     }
 }

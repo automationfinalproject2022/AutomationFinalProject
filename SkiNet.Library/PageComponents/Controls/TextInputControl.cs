@@ -12,7 +12,7 @@ namespace SkiNet.Library.PageComponents.Controls
     {
         private IWebElement Input => SearchContext.FindElement(By.TagName("input"));
 
-        public string Placeholder => Input.GetAttribute("placeholder");
+        //public string Placeholder => Input.GetAttribute("placeholder");
 
         public TextInputControl(IWebElement webElement) : base(webElement)
         {

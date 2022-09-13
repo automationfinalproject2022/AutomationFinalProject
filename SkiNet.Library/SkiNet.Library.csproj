@@ -17,4 +17,8 @@
     <Folder Include="Pages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SkiNet\SkiNet.csproj" />
+  </ItemGroup>
+
 </Project>

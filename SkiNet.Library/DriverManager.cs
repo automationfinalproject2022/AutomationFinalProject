@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SkiNet.Logging;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +19,7 @@ namespace SkiNet.Library
         {
             if (_driver == null)
             {
+                LogContext.Logger.Info("Starting the browser");
                 _driver = new ChromeDriver();
                 LoadUrl();
             }
@@ -27,9 +29,9 @@ namespace SkiNet.Library
         {
             if (url == null)
             {
-                url = Config.Configuration.Url;
+                url = Configuration.Url;
             }
-
+            LogContext.Logger.Info("Loading the URL" + url);
             Driver.Url = url;
             Driver.Manage().Window.Maximize();
         }

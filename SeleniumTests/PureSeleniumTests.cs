@@ -63,6 +63,14 @@ namespace SeleniumTests
 
             app.Navigation.OpenSignUpPage();
 
+            Thread.Sleep(1000);
+
+            app.Navigation.OpenWishPage();
+
+            Thread.Sleep(1000);
+
+            app.Navigation.OpenBasketPage();
+
             Thread.Sleep(4000);
 
         }
@@ -115,7 +123,30 @@ namespace SeleniumTests
             app.LoginPage.LoginForm.Password.SetData("!Q2w3e4r");
 
             app.LoginPage.LoginForm.SignIn();
+            //Thread.Sleep(1000);
+
+            app.Navigation.OpenWishPage();
+
+            //Thread.Sleep(1000);
+
+            app.Navigation.OpenBasketPage();
+
+            Thread.Sleep(4000);
         }
 
+        [Test]
+        public void SignUp()
+        {
+            App app = new App(Driver);
+
+            app.Navigation.OpenSignUpPage();
+                        
+            app.SignUpPage.SignUpForm.DisplayName.SetData("Niki4");
+            app.SignUpPage.SignUpForm.EmailAddress.SetData("d@d.com");
+            app.SignUpPage.SignUpForm.Password.SetData("!Q2w3e4r");
+
+            app.SignUpPage.SignUpForm.SignUp();
         }
+
+    }
 }

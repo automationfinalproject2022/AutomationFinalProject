@@ -17,40 +17,62 @@ namespace SkiNet.Library.PageComponents.PageObjects
 
         public HomePage OpenHomePage()
         {
-            Navigate(@"HOME");
+            //Navigate(@"HOME");
+            NavigateByRouterLink("/");
             return new HomePage(WrappedDriver);
         }
 
         public ShopPage OpenShopPage()
         {
-            Navigate(@"SHOP");
+            //Navigate(@"SHOP");
+            NavigateByRouterLink("/shop");
             return new ShopPage(WrappedDriver);
         }
 
         public ErrorsPage OpenErrorsPage()
         {
-            Navigate(@"ERRORS");
+            //Navigate(@"ERRORS");
+            NavigateByRouterLink("/test-error");
             return new ErrorsPage(WrappedDriver);
         }
-
-        
+                
         public LoginPage OpenLoginPage()
         {
-            Navigate(@"Login");
+            //Navigate(@"Login");
+            NavigateByRouterLink("/account/login");
             return new LoginPage(WrappedDriver);
         }
 
         public SignUpPage OpenSignUpPage()
         {
-            Navigate(@"Sign up");
+            //Navigate(@"Sign up");
+            NavigateByRouterLink("/account/register");
             return new SignUpPage(WrappedDriver);
         }
-       
+
+        public WishPage OpenWishPage()
+        {            
+            NavigateByRouterLink("/wish");
+            return new WishPage(WrappedDriver);
+        }
+
+        public BasketPage OpenBasketPage()
+        {
+            NavigateByRouterLink("/basket");
+            return new BasketPage(WrappedDriver);
+        }
+
+        private void NavigateByRouterLink(string locator)
+        {
+            IWebElement webElement = SearchContext.FindElement(By.CssSelector("[routerlink = '" + locator + "']"));  //[routerlink='/basket']
+            Redirect(webElement);
+        }
 
         private void Navigate(string locatorSuffix)
         {
             IWebElement webElement = SearchContext.FindElement(By.PartialLinkText(locatorSuffix));
             Redirect(webElement);
+            WaitLoadingIndicatorToDissappear();
         }
     }
 }

@@ -19,6 +19,8 @@ namespace SkiNet.Library.PageComponents
             HomePage = new(Driver);
             ShopPage = new(Driver);
             ErrorsPage = new(Driver);
+            BasketPage = new(Driver);
+            WishPage = new(Driver);
             LoginPage = new(Driver);
             SignUpPage = new(Driver);
         }
@@ -28,6 +30,10 @@ namespace SkiNet.Library.PageComponents
         public ShopPage ShopPage { get; init; }
 
         public ErrorsPage ErrorsPage { get; init; }
+
+        public BasketPage BasketPage { get; init; }
+
+        public WishPage WishPage { get; init; }
 
         public LoginPage LoginPage { get; init; }
 

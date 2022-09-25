@@ -21,6 +21,9 @@ namespace SkiNet.Library.PageComponents
             ErrorsPage = new(Driver);
             LoginPage = new(Driver);
             SignUpPage = new(Driver);
+            CheckoutPage = new(Driver);
+            BasketPage = new(Driver);
+            WishListPage = new(Driver);
         }
 
         public HomePage HomePage { get; init; }
@@ -32,6 +35,12 @@ namespace SkiNet.Library.PageComponents
         public LoginPage LoginPage { get; init; }
 
         public SignUpPage SignUpPage { get; init; }
+
+        public CheckoutPage CheckoutPage { get; init; }
+
+        public BasketPage BasketPage { get; init; }
+
+        public WishListPage WishListPage { get; init; }
 
         public Navigation Navigation => new(Driver.FindElement(By.ClassName("flex-column")));
     }

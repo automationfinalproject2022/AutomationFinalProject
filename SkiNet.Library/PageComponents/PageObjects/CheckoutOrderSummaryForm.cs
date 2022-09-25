@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using SkiNet.Library.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace SkiNet.Library.PageComponents.PageObjects
 {
-    public class SignUpForm : SecurityForm
+    public class CheckoutOrderSummaryForm : OrderSummaryForm
     {
-        public SignUpForm(IWebElement webElement) : base(webElement)
+        public CheckoutOrderSummaryForm(IWebElement webElement) : base(webElement)
         {
         }
-
-        protected IWebElement ActionElement => throw new NotImplementedException();
     }
 }

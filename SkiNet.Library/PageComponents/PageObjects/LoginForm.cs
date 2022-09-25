@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SkiNet.Library.PageComponents.PageObjects
 {
-    public class LoginForm : Form
+    public class LoginForm : SecurityForm
     {             
         private IWebElement ForgotPasswordLink => SearchContext.FindElement(By.LinkText("Forgot password ?")); 
         

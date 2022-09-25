@@ -19,8 +19,8 @@ namespace SkiNet.Library.PageComponents.Controls
         public override dynamic ActualData => Input.GetAttribute("value").ToString();
 
         public override void SetData(dynamic data)
-        {
-            Input.Clear();
+        {            
+            //Input.Clear();
             Input.SendKeys(data);
         }
     }

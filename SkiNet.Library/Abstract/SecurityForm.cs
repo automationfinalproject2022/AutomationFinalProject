@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace SkiNet.Library.Abstract
 {
-    public abstract class Form : PageObject
+    public abstract class SecurityForm : PageObject
     {
         private IWebElement TitleElement => SearchContext.FindElement(By.CssSelector("[class*='h3']"));
-        private IWebElement InputControlContainer => SearchContext.FindElement(By.TagName("app-text-input"));
+        //private IWebElement InputControlContainer => SearchContext.FindElement(By.TagName("app-text-input"));
         private IWebElement EmailElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='email']"));
         private IWebElement PasswordElement => SearchContext.FindElement(By.CssSelector("app-text-input[formcontrolname='password']"));
         
         protected IWebElement ButtonElement => SearchContext.FindElement(By.CssSelector("button[type='submit']")); 
 
-        protected Form(IWebElement webElement) : base(webElement)
+        protected SecurityForm(IWebElement webElement) : base(webElement)
         {
 
         }

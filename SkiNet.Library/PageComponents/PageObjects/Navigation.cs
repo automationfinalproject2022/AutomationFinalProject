@@ -45,11 +45,29 @@ namespace SkiNet.Library.PageComponents.PageObjects
             Navigate(@"Sign up");
             return new SignUpPage(WrappedDriver);
         }
-       
+
+        public BasketPage OpenBasketPage()
+        {
+            NavigateByRouterLink(@"/basket");
+            return new BasketPage(WrappedDriver);
+        }
+
+        public BasketPage OpenWishListPage()
+        {
+            NavigateByRouterLink(@"/wish");
+            return new BasketPage(WrappedDriver);
+        }
 
         private void Navigate(string locatorSuffix)
         {
             IWebElement webElement = SearchContext.FindElement(By.PartialLinkText(locatorSuffix));
+            Redirect(webElement);
+        }
+
+        private void NavigateByRouterLink(string routerLinkValue)
+        {
+            string cssSelector = "a[routerlink='" + routerLinkValue + "']";
+            IWebElement webElement = SearchContext.FindElement(By.CssSelector(cssSelector));
             Redirect(webElement);
         }
     }
